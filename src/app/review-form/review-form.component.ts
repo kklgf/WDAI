@@ -23,6 +23,13 @@ export class ReviewFormComponent {
     });
   }
 
+  formatLabel(value: number) {
+    if (value >= 1) {
+      return Math.round(value) + ' pkt';
+    }
+    return value;
+  }
+
   onSubmit(formGroupDirective: FormGroupDirective): void {
     this.newReview.emit(this.reviewForm.value as Review);
     this.reviewForm.reset();
