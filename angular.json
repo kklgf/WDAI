@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "course-wiki": {
+    "twoje-kursy": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/course-wiki",
+            "outputPath": "dist/twoje-kursy",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "course-wiki:build"
+            "browserTarget": "twoje-kursy:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "course-wiki:build:production"
+              "browserTarget": "twoje-kursy:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "course-wiki:build"
+            "browserTarget": "twoje-kursy:build"
           }
         },
         "test": {
@@ -117,16 +117,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "course-wiki:serve"
+            "devServerTarget": "twoje-kursy:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "course-wiki:serve:production"
+              "devServerTarget": "twoje-kursy:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "course-wiki"
+  "defaultProject": "twoje-kursy"
 }
