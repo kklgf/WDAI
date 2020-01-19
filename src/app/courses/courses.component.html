@@ -1,0 +1,15 @@
+<mat-card>
+  <app-course-search (search)="onSearch($event)"></app-course-search>
+  <mat-paginator
+    [length]="(courses | courseSearch:search).length"
+    [pageSize]="pageSize"
+    [pageIndex]="pageIndex"
+    [pageSizeOptions]="[3, 6, 9, 12, 15]"
+    (page)="onPageChange($event)">
+  </mat-paginator>
+</mat-card>
+<div class="cards">
+  <div class="card" *ngFor="let course of courses | courseSearch:search | slice:(pageIndex * pageSize):(pageIndex * pageSize + pageSize)">
+    <app-course-card [course]="course"></app-course-card>
+  </div>
+</div>

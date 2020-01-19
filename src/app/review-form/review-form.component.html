@@ -1,0 +1,13 @@
+<form [formGroup]="reviewForm" #formDirective="ngForm" (ngSubmit)="onSubmit(formDirective)">
+  Ocena:
+  <mat-slider thumbLabel formControlName="rating" min="1" max="10" step="1" value="5" [displayWith]="formatLabel"></mat-slider>
+<!--  <bar-rating formControlName="rating" [max]="10"></bar-rating>-->
+  <mat-form-field class="comment">
+    <textarea formControlName="comment" matInput maxlength="100" rows="2" placeholder="Komentarz">
+    </textarea>
+    <mat-hint align="end">{{reviewForm.value?.comment?.length}} / 100</mat-hint>
+  </mat-form-field>
+  <button type="submit" mat-flat-button color="accent" [disabled]="!reviewForm.valid">
+    Wyślij
+  </button>
+</form>

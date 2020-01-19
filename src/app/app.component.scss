@@ -1,0 +1,30 @@
+.mat-toolbar{
+  max-width: 1200px;
+  margin: auto;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.username {
+  margin-bottom: 0;
+  margin-left: 20px;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.app-main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+@media (max-width: 900px) {
+  .app-main {
+    padding: 20px 10px;
+  }
+}

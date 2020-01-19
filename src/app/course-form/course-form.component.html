@@ -1,0 +1,44 @@
+<form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Nazwa</mat-label>
+    <input formControlName="name" matInput>
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Opis</mat-label>
+    <textarea formControlName="description" matInput rows="4">
+    </textarea>
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Punkty ECTS</mat-label>
+    <input formControlName="ects" matInput type="number" min="1" max="15">
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Typ</mat-label>
+    <mat-select formControlName="type">
+      <mat-option [value]="CourseType.Lecture">
+        {{CourseType.Lecture | courseType}}
+      </mat-option>
+      <mat-option [value]="CourseType.Laboratory">
+        {{CourseType.Laboratory | courseType}}
+      </mat-option>
+      <mat-option [value]="CourseType.Project">
+        {{CourseType.Project | courseType}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Semestr</mat-label>
+    <input formControlName="semester" matInput type="number" min="1" max="10">
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Limit uczestników</mat-label>
+    <input formControlName="attendee_limit" matInput type="number" min="1">
+  </mat-form-field>
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Adres obrazka</mat-label>
+    <input formControlName="image_url" matInput type="text">
+  </mat-form-field>
+  <button type="submit" mat-flat-button color="accent" [disabled]="!courseForm.valid">
+    {{submitText}}
+  </button>
+</form>

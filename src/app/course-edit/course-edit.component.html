@@ -1,0 +1,4 @@
+<div class="root">
+  <h1 class="mat-h1">Edytuj kurs</h1>
+  <app-course-form *ngIf="course" [initialValue]="course" submitText="Zapisz" (done)="onSubmit($event)"></app-course-form>
+</div>

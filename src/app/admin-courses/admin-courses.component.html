@@ -1,0 +1,43 @@
+<div class="toolbar">
+  <h1 class="mat-h1">Kursy</h1>
+  <div class="grow"></div>
+  <button mat-flat-button color="primary" [routerLink]="['/admin/courses/new']">
+    Dodaj kurs
+  </button>
+</div>
+<table mat-table [dataSource]="courses" class="mat-elevation-z2">
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Nazwa</th>
+    <td mat-cell *matCellDef="let course">{{course.name}}</td>
+  </ng-container>
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef>Rodzaj</th>
+    <td mat-cell *matCellDef="let course">{{course.type | courseType}}</td>
+  </ng-container>
+  <ng-container matColumnDef="semester">
+    <th mat-header-cell *matHeaderCellDef class="center">Semestr</th>
+    <td mat-cell *matCellDef="let course" class="center">{{course.semester}}</td>
+  </ng-container>
+  <ng-container matColumnDef="ects">
+    <th mat-header-cell *matHeaderCellDef class="center">ECTS</th>
+    <td mat-cell *matCellDef="let course" class="center">{{course.ects}}</td>
+  </ng-container>
+  <ng-container matColumnDef="attendee_limit">
+    <th mat-header-cell *matHeaderCellDef class="center">Limit uczestników</th>
+    <td mat-cell *matCellDef="let course" class="center">{{course.attendee_limit}}</td>
+  </ng-container>
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef class="center"></th>
+    <td mat-cell *matCellDef="let course" class="center">
+      <button mat-button class="action" [routerLink]="['/admin/courses', course.id, 'edit']">
+        Edytuj
+      </button>
+      <button mat-button color="warn" class="action" (click)="onDelete(course)">
+        Usuń
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-header>
+    <img mat-card-avatar [src]="course.image_url" />
+    <mat-card-title>{{course.name}}</mat-card-title>
+    <mat-card-subtitle>Semestr {{course.semester}}.</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <bar-rating *ngIf="course.actual_note" [rate]="course.actual_note" [max]="10" [readOnly]="true"></bar-rating>
+    <div *ngIf="!course.actual_note">
+      <div class="no-reviews">
+        Brak opinii
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-flat-button [routerLink]="['/courses', course.id]">
+      WIĘCEJ O TYM PRZEDMIOCIE
+    </a>
+  </mat-card-actions>
+</mat-card>

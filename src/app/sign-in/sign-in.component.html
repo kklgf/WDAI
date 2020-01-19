@@ -1,0 +1,16 @@
+<div class="root">
+  <h1 class="mat-h1">Zaloguj się</h1>
+  <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email</mat-label>
+      <input formControlName="email" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Password</mat-label>
+      <input type="password" formControlName="password" matInput>
+    </mat-form-field>
+    <button type="submit" mat-flat-button color="accent" [disabled]="!signInForm.valid">
+      Zaloguj
+    </button>
+  </form>
+</div>

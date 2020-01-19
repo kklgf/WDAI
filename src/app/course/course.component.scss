@@ -1,0 +1,70 @@
+.mat-header-row {
+  white-space: nowrap;
+}
+
+.mat-header-cell,
+.mat-cell {
+  padding: 10px;
+  text-align: center;
+  color: darkslategray;
+}
+
+.course {
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+
+  .summary {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    img {
+      padding: 20px;
+      border-radius: 50%;
+    }
+
+    .course-chips {
+      margin-top: 20px;
+    }
+
+    table{
+      background: #f7cf5e;
+    }
+  }
+
+  .content {
+    flex-grow: 1;
+    margin-left: 40px;
+
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      h1 {
+        margin-bottom: 0;
+        margin-right: 10px;
+      }
+    }
+
+    .reviews,
+    .review-form {
+      margin-top: 40px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .summary table {
+    width: 100%;
+  }
+
+  .course {
+    flex-direction: column;
+
+    .content {
+      margin-top: 20px;
+      margin-left: 0;
+    }
+  }
+}

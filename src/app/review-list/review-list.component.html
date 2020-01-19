@@ -1,0 +1,6 @@
+<div *ngFor="let review of reviews" class="review">
+  <bar-rating [rate]="review.rating" [max]="10" [readOnly]="true"></bar-rating>
+  <span class="mat-body">
+    {{review.comment}}
+  </span>
+</div>

@@ -1,0 +1,11 @@
+.cards {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+}
+
+mat-card {
+  margin: 20px 0;
+}
